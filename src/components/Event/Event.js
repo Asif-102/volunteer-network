@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Event = ({event}) => {
+    const [display, setDisplay] = useState('block')
     const deleteEvent = id =>{
         const url=`http://localhost:5000/deleteEvent/${id}`;
         fetch(url,{
@@ -9,13 +10,10 @@ const Event = ({event}) => {
                 'Content-Type':'application/json'
             }
         })
-        .then(res => setTimeout(()=>{
-            window.location.reload(true)
-        },2000))
-        
+        .then(res => setDisplay('none')) 
     }
     return (
-        <div className="col-md-3">
+        <div className="col-md-3" style={{display:display}}>
             <img style={{height: '300px'}} src={event.imageURL} alt=""/>
             <h3>{event.name} <button onClick={()=>deleteEvent(event._id)}>Delete</button></h3>
         </div>
