@@ -11,7 +11,7 @@ const Event = ({event}) => {
         })
         .then(res => setTimeout(()=>{
             window.location.reload(true)
-        },3000))
+        },2000))
         
     }
     return (
