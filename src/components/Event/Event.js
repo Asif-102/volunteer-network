@@ -9,7 +9,9 @@ const Event = ({event}) => {
                 'Content-Type':'application/json'
             }
         })
-        .then(res => setTimeout(window.location.reload(true),4000))
+        .then(res => setTimeout(()=>{
+            window.location.reload(true)
+        },3000))
         
     }
     return (
