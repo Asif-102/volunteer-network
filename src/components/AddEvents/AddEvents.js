@@ -12,7 +12,7 @@ const AddEvents = () => {
         imageURL: imageURL
       };
 
-      const url = `http://localhost:5000/addEvent`;
+      const url = `https://infinite-savannah-64457.herokuapp.com/addEvent`;
 
       fetch(url,{
         method:'POST',
